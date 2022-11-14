@@ -1,0 +1,138 @@
+.post {
+   background: var(--gray-800);
+   border-radius: 8px;
+   padding: 0 2.5rem 2.5rem 2.5rem;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+
+.post + .post {
+   margin-top: 2rem;
+}
+
+.cover {
+   margin-left: calc(0px - 2.5rem);
+   width: calc(100% + 5rem);
+   height: 72px;
+   object-fit: cover;
+   filter: opacity(40%)
+}
+
+.post > header {
+   margin-top: calc(0px - 1.5rem - 6px);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   filter: opacity(100%)
+}
+
+.post > header time {
+   padding-top: 1.25rem;
+   font-size: 0.875rem;
+   color: var(--gray-400);
+}
+
+.author {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+.avatar {
+   box-sizing: initial;
+   width: calc(3rem + 12px);
+   height: calc(3rem + 12px);
+   border-radius: 8px;
+   border: 4px solid var(--gray-800);
+   outline: 2px solid var(--green-500);
+}
+
+.authorInfo {
+   display: flex;
+   flex-direction: column;
+   margin-top: calc(0px - 1rem);
+}
+
+.authorInfo strong{
+   color: var(--gray-100);
+   line-height: 1.6;
+}
+
+.authorInfo span{
+   font-size: 0.875rem;
+   color: var(--gray-400);
+   line-height: 1.6;
+}
+
+.content {
+   line-height: 1.6;
+   color: var(--gray-300);
+   margin-top: 1.5rem;
+}
+
+.content p {
+   margin-top: 1rem;
+}
+
+.content p a {
+   font-weight: bold;
+   color: var(--green-500);
+   text-decoration: none;
+}
+
+.content p a:hover {
+   color: var(--green-300)
+} 
+
+.commentForm {
+   width: 100%;
+   margin-top: 1.25rem;
+   padding-top: 1.25rem;
+   border-top: 1px solid var(--gray-600);
+
+}
+
+.commentForm > strong {
+   line-height: 1.6;
+   color: var(--gray-100);
+}
+
+.commentForm textarea {
+   width: 100%;
+   background: var(--gray-900);
+   border: 0;
+   resize: none;
+   height: 6rem;
+   padding: 1rem;
+   border-radius: 8px;
+   color: var(--gray-100);
+   line-height: 1.4;
+   margin-top: 1rem;
+}
+
+.commentForm footer {
+   visibility: hidden;
+   max-height: 0;
+}
+
+.commentForm:focus-within footer {
+   visibility: visible;
+   max-height: none;
+}
+
+.commentForm button[type=submit] {
+   padding: 1rem 1.5rem;
+   margin-top: 1rem;
+   border-radius: 8px;
+   border: 0;
+   background: var(--green-500);
+   color: var(--white);
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.commentForm button[type=submit]:hover {
+   background: var(--green-300);
+}
