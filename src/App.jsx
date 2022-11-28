@@ -94,6 +94,9 @@ const posts = [
   }
 ]
 
+const post = [
+  
+]
 
 function App() {
   return (
