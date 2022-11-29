@@ -5,6 +5,7 @@ import styles from './Post.module.css';
 import { Comment } from './Comment';
 import { Avatar } from './Avatar';
 import { useState } from 'react';
+import { Cpu } from 'phosphor-react';
 
 export function Post({author, publishedAt, content}){
 
@@ -34,6 +35,14 @@ export function Post({author, publishedAt, content}){
 
    function newCommentChange() {
       setNewCommentText(event.target.value);
+   }
+
+   function deleteComment(commentToDelete) {
+      const withouDeletedOne = comments.filter(comment => {
+         return comment != commentToDelete;
+      });
+
+      setComments(withouDeletedOne);
    }
 
    return(
@@ -113,7 +122,13 @@ export function Post({author, publishedAt, content}){
 
          <div className='styles.commentList'>
             {comments.map(comment => {
-               return(<Comment content={comment} key={comment}/>);
+               return(
+                  <Comment
+                     content={comment}
+                     key={comment}
+                     onDeleteComment={deleteComment}
+                  />
+               );
             })}
          </div>
       </article>
